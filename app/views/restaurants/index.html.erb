@@ -1,0 +1,33 @@
+<div class="navbar-wagon">
+  <!-- Logo -->
+
+
+
+
+  <!-- Right Navigation -->
+  <div class="navbar-wagon-right hidden-xs hidden-sm">
+
+    <!-- Links -->
+
+    <div class="navbar-wagon-item">
+      <div class="dropdown">
+        <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle text-right", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Dropdown list appearing on mobile only -->
+</div>
+<h1 class="text-center">My list of restaurants</h1>
+<div class="container ">
+  <ul class="list-group">
+    <% @restaurants.each do |restaurant| %>
+      <li class="list-group-item">
+        <h2><%= restaurant.name %></h2>
+        <p><%= restaurant.address %></p>
+      <%= link_to "See details", restaurant_path(restaurant), class: "btn btn-primary"%>
+      </li>
+    <% end %>
+  </ul>
+</div>
